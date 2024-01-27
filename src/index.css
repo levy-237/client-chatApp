@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+body {
+  padding: 0.1vh;
+  background-color: rgb(24, 24, 24);
+  font-family: "Playfair Display", serif;
+  padding-bottom: 0px;
+}
+::-webkit-scrollbar {
+  height: 12px;
+  width: 10px;
+  background: rgb(46, 46, 46);
+}
+input:focus {
+  border: 0px;
+  outline: none;
+  box-shadow: 0 5px 10px rgb(0, 0, 0);
+}
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh;
+}
+.register-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+.register section {
+  display: flex;
+  align-items: center;
+  width: 18.5rem;
+  justify-content: space-between;
+  color: white;
+}
+.register section h3 {
+  font-size: x-large;
+  margin-bottom: 17px;
+  transition: 0.3s;
+}
+.register section h3:hover {
+  color: rgb(91, 91, 91);
+}
+.register-form input:focus {
+  outline: hidden;
+  border: 0px;
+}
+.register-form input {
+  width: 18.5rem;
+  height: 3rem;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+.register-form button {
+  cursor: pointer;
+  color: rgb(63, 63, 63);
+  background-color: beige;
+  font-size: x-large;
+  height: 3.2rem;
+  border: 0px;
+  border-radius: 10px;
+  transition: 0.3s;
+  width: 100%;
+}
+.register-form button:hover {
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: black;
+}
+.chat-page {
+  width: 100%;
+  height: 97vh;
+  display: flex;
+  gap: 0px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.chat-contact {
+  width: 20%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin;
+  border-radius: 10px;
+  border-right: 1px solid white;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+}
+.chatContact-header {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  height: 2.5rem;
+  margin-top: 10px;
+}
+.signInAs {
+  color: grey;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.chatContact-header p {
+  font-size: x-large;
+  font-family: "Sacramento", cursive;
+  margin-top: 13px;
+}
+.user-searchDiv {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.user-searchDiv input {
+  border: 0px;
+  border-radius: 8px;
+  width: 80%;
+  height: 1.8rem;
+}
+/* .user-searchDiv input:focus {
+fix this
+} */
+.userAvatar {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: max-content;
+  padding-top: 0.5rem;
+  transition: 0.5s;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.127);
+}
+.userAvatar div {
+  opacity: 100%;
+}
+.userAvatar.selected {
+  color: black;
+  background: beige;
+  margin-left: 0px;
+  border-left: 5px solid rgb(0, 115, 255);
+  padding-left: 10px;
+}
+
+.userAvatar-initial {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 100;
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  background-color: #8b4513;
+}
+.userAvatar h1 {
+  margin: 0px;
+  margin-left: 10px;
+  font-size: x-large;
+  padding-top: 2px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.onlineIndicator {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  opacity: 100%;
+  border-radius: 40%;
+  bottom: -1px;
+  right: -1px;
+}
+.onlineIndicator.online {
+  background-color: green;
+}
+.onlineIndicator.offline {
+  background-color: rgb(163, 163, 163);
+}
+.chatSection {
+  width: 80%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-radius: 10px;
+  height: 100%;
+}
+.messageDiv-wrapper {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2vh;
+}
+.messageDiv p {
+  margin: 0px;
+}
+.messageDiv.byMe {
+  background-color: rgb(10, 116, 255);
+  color: black;
+  margin-left: auto;
+  margin-right: 14px;
+}
+.messageDiv.byOpp {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 19px 19px 19px;
+  margin-left: 14px;
+}
+
+.messageDiv {
+  color: white;
+  border-radius: 19px 0px 19px 19px;
+  padding: 12px;
+  margin: 0px;
+  background-color: aqua;
+  margin-bottom: 7px;
+  width: max-content;
+  max-width: 60%;
+  min-width: 5%;
+  margin-bottom: 7px;
+}
+.chatSection-header {
+  border-bottom: 1px solid grey;
+  color: white;
+  font-size: larger;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+.chatSection-header input {
+  border-radius: 15px;
+  margin-top: 5px;
+  height: 1.9rem;
+  width: 11.5rem;
+  margin-right: 10px;
+  border: 0px;
+}
+.chatSection-header section {
+  margin-top: 10px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.chatSection-close {
+  margin-right: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.chatSection-header section p {
+  margin: 0px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: grey;
+  letter-spacing: 1px;
+}
+.chat-inputDiv {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+.chat-inputDiv input {
+  width: 100%;
+  border: 0px;
+  border-radius: 4px 0px 0px 4px;
+  border-left: 0px;
+  background-color: white;
+}
+.chat-inputDiv label {
+  cursor: pointer;
+}
+.chatInputAttachment input {
+  display: none;
+}
+.chat-inputDiv button {
+  border: 0px;
+  border-radius: 0px 4px 4px 0px;
+  border-left: 1px solid grey;
+  width: 7vw;
+  margin-left: auto;
+  background-color: white;
+}
+.chatUserAvatar-initial {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 100;
+  font-size: 1.3rem;
+  text-align: center;
+  position: relative;
+  text-align: center;
+  background-color: #8b4513;
+}
+.logout {
+  cursor: pointer;
+  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: -13px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  background-color: rgb(24, 24, 24);
+  width: 20%;
+}
+.logout span {
+  font-size: larger;
+}
+.noMessage {
+  font-size: x-large;
+  text-align: center;
+  margin-top: 30vh;
+  color: white;
+}
+
+.noSelectedUser {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  gap: 2rem;
+  color: white;
+}
+.noSelectedUser span {
+  font-size: xx-large;
+}
+.noSelectedUser p {
+  cursor: pointer;
+  color: rgb(223, 6, 223);
+  text-decoration: underline;
+  font-size: larger;
+}
+.authError {
+  color: red;
+  font-size: larger;
+  width: 17rem;
+  margin-bottom: 5px;
+  border: 2px solid rgba(255, 0, 0, 0.291);
+  padding: 10px;
+  border-radius: 10px;
+}
+.chat-mobileContact {
+  z-index: 1000;
+  position: absolute;
+  width: 40%;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  display: flex;
+  height: 97%;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin;
+  border-radius: 10px;
+  border-right: 1px solid white;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+}
+.mobileContact-close {
+  margin-left: auto;
+  margin-top: 5px;
+  cursor: pointer;
+}
+/* 
+
+
+
+
+
+
+
+
+
+ */
+@media (min-width: 760px) {
+  .mobile-Contact {
+    display: none;
+  }
+  .chatSection-close {
+    display: none;
+  }
+  .chatSection-header section {
+    margin-left: 30px;
+  }
+  .noSelectedUser p {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .chat-contact {
+    display: none;
+  }
+  .chatSection {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .chatSection-close {
+    margin-right: 1px;
+    margin-left: 1px;
+  }
+  .chat-mobileContact {
+    z-index: 1000;
+    position: absolute;
+    width: 50%;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    display: flex;
+    height: 97%;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: thin;
+    border-radius: 10px;
+    border-right: 1px solid white;
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 550px) {
+  .chat-inputDiv {
+    margin-right: 3px;
+  }
+
+  .chat-inputDiv button {
+    width: 10vw;
+  }
+}
