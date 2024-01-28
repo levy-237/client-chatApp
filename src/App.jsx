@@ -17,7 +17,7 @@ import Chat from "./Chat";
 export default function App() {
   const { userName, id } = useContext(UserContext);
 
-  axios.defaults.baseURL = "http://localhost:4000";
+  axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL;
   axios.defaults.withCredentials = true;
 
   const router = createBrowserRouter(

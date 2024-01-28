@@ -42,7 +42,7 @@ export default function Chat() {
 
   ///creating websocket connection and setting up listeners
   const connectWs = () => {
-    const ws = new WebSocket("ws://localhost:4000");
+    const ws = new WebSocket(import.meta.env.VITE_WEBSOKCET_URL);
     setWsConnection(ws);
     ws.addEventListener("message", handleMessage);
     ws.addEventListener("close", () => setTimeout(connectWs, 1000));
