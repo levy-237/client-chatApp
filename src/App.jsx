@@ -1,6 +1,7 @@
 import AuthForm from "./AuthForm";
 import axios from "axios";
 import "./index.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Outlet, Navigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./UserContext";
@@ -36,6 +37,7 @@ export default function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Analytics />
     </>
   );
 }
